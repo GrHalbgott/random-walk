@@ -6,16 +6,12 @@ In this project a simulation of randomized walks is generated.
 
 A random walk is a mathematical object, known as a stochastic or random  process, that describes a path that consists of a succession of random  steps on some mathematical space such as the integers. An elementary example of a random walk is the random walk on the integer number line, which starts at 0 and at each step moves +1 or -1 with  equal probability ([Source](https://www.geeksforgeeks.org/random-walk-implementation-python/)).
 
-The task at hand was to rewrite the code for a Random Walk to be more readable, maintainable, reliable, reusable and efficient based on the following requirements:
+This project aims to simulate a random walk simulation with different options and further implementations. The main implementations are:
 
-1. The program should be able to simulate **multiple random walkers**, not just one.
-2. The program should be **executable from the command line**.
-3. The user should be able to **specify the number of random walkers** through a command line parameter.
-4. **Write tests** to see if your random walkers are working as expected.
-5. Make sure to use the best-practices by Wilson net al 2014 for **readable code style**.
-6. **Document** how to install and run the program in your README.md
-
-Out of own interest, further implementations were made like enabling more interaction between the user and the options one can choose, even more randomization with implementing random start points and speeds per walker and having a Moore movement pattern (8 possible directions, not only 4). Further implementations are to be made, they will be mentioned here when finished.
+1. The program can simulate **multiple random walkers** with different speeds
+2. **High randomization** of speeds, start points, colorization etc.
+3. The program has **options** to simulate the random walk of your needs like different neighborhood movement patterns (Neumann and Moore), enabling random start points, running the code multiple times, saving the plot automatically...
+4. TBD: 3D walks
 
 ## Getting Started
 
@@ -27,7 +23,7 @@ To run the program every machine having Python 3.9 installed is suitable. Your P
 
 ### Installing
 
-Our files are divided in six Python script files (*main.py*, *walkers.py*, *utils.py*. *test_objects.py*, *test_integration.py* and *init.py*). Those files can be found at [Gitlab](https://courses.gistools.geog.uni-heidelberg.de/pd281/random-walker). *main.py* is referring to the main program. *walkers.py* is creating a class Walkers with specified parameters for starting points on the x- and y-axis as well as speed. Furthermore, this parameters are checked and returned in a formatted string with details about the type of walker. *utils.py* provides some functions to plot the walkers and write them to a csv-file. The files *test_objects.py*, *test_integration.py* are testing whether the created functions are working and if the the main program is executing properly and catching any errors.
+Our files are divided in six Python script files (*main.py*, *walkers.py*, *utils.py*. *test_objects.py*, *test_integration.py* and *init.py*). *main.py* is referring to the main program. *walkers.py* is creating a class Walkers with specified parameters for starting points on the x- and y-axis as well as speed. Furthermore, this parameters are checked and returned in a formatted string with details about the type of walker. *utils.py* provides some functions to plot the walkers and write them to a csv-file. The files *test_objects.py*, *test_integration.py* are testing whether the created functions are working and if the the main program is executing properly and catching any errors.
 
 ### Executing program
 
@@ -120,9 +116,3 @@ You can run the program with the default values.
 Want to run it now? Use y/n: y
 ```
 ![1walker](./data/random_walkers_1w_1000s.png)
-
-## Authors
-
-- *Nikolaos Kolaxidis*, **Email:** pd281@stud.uni-heidelberg.de
-
-- *Piero Badowski*, **Email:** rp280@stud.uni-heidelberg.de
