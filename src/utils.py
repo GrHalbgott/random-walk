@@ -204,7 +204,7 @@ def plot_all_walkers(steps, n_walkers, want_plot_saved):
     plt.show()
 
 
-def write_to_dataframe(walkers):
+def write_to_dataframe(walkers, steps, n_walkers):
     """Save in dataframe and write to csv file"""
     walkers_df = pd.DataFrame().from_dict(walkers, orient="index")
-    walkers_df.to_csv("../data/walkers.csv")
+    walkers_df.to_csv("../data/walkers_{}w_{}s.csv".format(n_walkers, steps))
