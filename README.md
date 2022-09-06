@@ -63,9 +63,7 @@ Call the program without any arguments to access the help within the terminal wi
 ```
 $ python src/main.py
 
-usage: main.py [-h] [-s Steps, integer] [-w Walkers, integer]
-[-m Movepattern, bool] [-xy Startpoint, bool] [-p Save plot, bool]
-[-r Runs, integer]
+usage: main.py [optional arguments {-h -s -w -m -xy -p -r}]
 
 Simulate a random walk with n walkers for n steps. You can use the following options to change the simulation to your needs. Have fun!
 
