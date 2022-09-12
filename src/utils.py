@@ -15,44 +15,44 @@ def _check_input_arguments():
     parser = argparse.ArgumentParser(description=help_msg, prefix_chars="-")
     parser.add_argument(
         "-s",
-        metavar="Steps, integer",
+        metavar="Steps",
         dest="total_steps",
-        help="Number of total steps every walker shall take. Default value: 1000",
+        help="Integer | Number of total steps every walker shall take. Default value: 1000",
         default=1000,
     )
     parser.add_argument(
         "-w",
-        metavar="Walkers, integer",
+        metavar="Walkers",
         dest="n_walkers",
-        help="Number of total walkers to be created. Default value: 1",
+        help="Integer | Number of total walkers to be created. Default value: 1",
         default=1,
     )
     parser.add_argument(
         "-m",
-        metavar="Movepattern, bool",
+        metavar="Movepattern",
         dest="movepattern",
-        help="Choose neighborhood movement pattern between Neumann (4 directions, false) or Moore (8 directions, true, default)",
+        help="Boolean | Choose neighborhood movement pattern between Neumann (4 directions, false) or Moore (8 directions, true, default)",
         default="true",
     )
     parser.add_argument(
         "-xy",
-        metavar="Startpoint, bool",
+        metavar="Startpoint",
         dest="random_start",
-        help="Do you want different (random) start points for each walker (true, default) or let all plots start at 0,0 (false)?",
+        help="Boolean | Do you want different (random) start points for each walker (true, default) or let all plots start at 0,0 (false)?",
         default="true",
     )
     parser.add_argument(
         "-p",
-        metavar="Save plot, bool",
+        metavar="Save plot",
         dest="want_plot_saved",
-        help="Do you want to automatically save the plot locally (./data/)? Use true/false. Default: false",
+        help="Boolean | Do you want to automatically save the plot locally (./data/)? Use true/false. Default: false",
         default="false",
     )
     parser.add_argument(
         "-r",
-        metavar="Runs, integer",
+        metavar="Runs",
         dest="total_runs",
-        help="Total runs of the script (generate multiple plots if wished). Default value: 1",
+        help="Integer | Total runs of the script (generate multiple plots if wished). Default value: 1",
         default=1,
     )
     if len(sys.argv) == 1:

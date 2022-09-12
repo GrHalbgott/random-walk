@@ -63,27 +63,18 @@ Call the program without any arguments to access the help within the terminal wi
 ```
 $ python src/main.py
 
-usage: main.py main.py [-h] [-s Steps, integer] [-w Walkers, integer] [-m Movepattern, bool] [-xy Startpoint, bool] [-p Save plot, bool] [-r Runs, integer]
+usage: main.py [-h] [-s Steps] [-w Walkers] [-m Movepattern] [-xy Startpoint] [-p Save plot] [-r Runs]
 
 Simulate a random walk with n walkers for n steps. You can use the following options to change the simulation to your needs. Have fun!
 
 optional arguments:
-  -h, --help            show this help message and exit
-
-  -s Steps, integer     Number of total steps every walker shall take.
-                        Default value: 1000
-  -w Walkers, integer   Number of total walkers to be created.
-                        Default value: 1
-  -m Movepattern, bool  Choose neighborhood movement pattern between
-                        Neumann (4 directions, false) or
-                        Moore (8 directions, true, default)
-  -xy Startpoint, bool  Do you want different (random) start points for
-                        each walker (true, default) or
-                        let all plots start at 0,0 (false)?
-  -p Save plot, bool    Do you want to automatically save the plot locally
-                        (in ./data/)? Use true/false. Default: false
-  -r Runs, integer      Total runs of the script (generate multiple plots if
-                        wished). Default value: 1
+  -h, --help      show this help message and exit
+  -s Steps        Integer | Number of total steps every walker shall take. Default value: 1000
+  -w Walkers      Integer | Number of total walkers to be created. Default value: 1
+  -m Movepattern  Boolean | Choose neighborhood movement pattern between Neumann (4 directions, false) or Moore (8 directions, true, default)
+  -xy Startpoint  Boolean | Do you want different (random) start points for each walker (true, default) or let all plots start at 0,0 (false)?
+  -p Save plot    Boolean | Do you want to automatically save the plot locally (./data/)? Use true/false. Default: false
+  -r Runs         Integer | Total runs of the script (generate multiple plots if wished). Default value: 1
 ```
 
 ## Results
