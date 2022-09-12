@@ -58,7 +58,7 @@ class Walker:
         Choose randomly between two movement patterns (Moore with 8 directions and Neumann with 4 directions)
         :return: a value from the specified movement set which can be used in plan_next_step()
         """
-        if movepattern in ["True", "true", 1]:
+        if movepattern == "true":
             moveset = [
                 "East",
                 "Southeast",
@@ -106,7 +106,7 @@ class Walker:
 
     def random_walk(self, move_pattern, random_start):
         """Put together get_random_direction() and plan_next_step() to simulate walking"""
-        if random_start in ["True", "true", 1]:
+        if random_start == "true":
             self.x[0] = self.get_random_startpoint()
             self.y[0] = self.get_random_startpoint()
         for step in range(1, self.steps):  # start with step after startpoint

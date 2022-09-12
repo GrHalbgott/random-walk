@@ -72,9 +72,9 @@ def _check_input_arguments():
     # Assign arguments to variables and do some checks for error-handling
     total_steps = abs(int(args.total_steps))
     n_walkers = int(args.n_walkers)
-    movepattern = args.movepattern
-    random_start = args.random_start
-    want_plot_saved = args.want_plot_saved
+    movepattern = args.movepattern.lower()
+    random_start = args.random_start.lower()
+    want_plot_saved = args.want_plot_saved.lower()
     total_runs = int(args.total_runs)
     if total_steps == 0:
         total_steps = 1000
@@ -89,13 +89,13 @@ def _check_input_arguments():
     if n_walkers < 1:
         n_walkers = 1
         print("Changed quantity of walkers to 1 to be able to plot something.")
-    if movepattern not in ["True", "true", 1, "False", "false", 0]:
-        movepattern = "True"
+    if movepattern not in ["true", "false"]:
+        movepattern = "true"
         print(
             "Changed movement pattern to default value 'Moore' due to wrong input from user."
         )
-    if random_start not in ["True", "true", 1, "False", "false", 0]:
-        random_start = "True"
+    if random_start not in ["true", "false"]:
+        random_start = "true"
         print(
             "Changed starting point to default value 'random start' due to wrong input from user."
         )
@@ -127,7 +127,7 @@ def plot_walker_path(n_walkers, new_walker, random_start):
         plt.legend()
     else:
         pass
-    if random_start in ["True", "true", 1]:
+    if random_start == "true":
         plt.scatter(
             new_walker.x[0],
             new_walker.y[0],
@@ -170,18 +170,16 @@ def plot_all_walkers(steps, n_walkers, want_plot_saved):
             )
         )
     # checks if the user wants to locally save the figure as well
-    while want_plot_saved not in ["True", "true", 1, "False", "false", 0]:
-        want_plot_saved = input("Do you want to save the plot as figure? Use y/n: ")
+    while want_plot_saved not in ["true", "false"]:
+        want_plot_saved = input(
+            "Do you want to save the plot as figure? Use y/n: "
+        ).lower()
         if want_plot_saved in [
             "y",
             "yes",
             "yup",
             "ye",
-            "Y",
-            "YES",
-            "YUP",
-            "YE",
-        ] or want_plot_saved in ["n", "no", "nope", "N", "NO", "NOPE"]:
+        ] or want_plot_saved in ["n", "no", "nope"]:
             break
         print("Please provide a valid input.")
     if want_plot_saved in [
@@ -189,11 +187,6 @@ def plot_all_walkers(steps, n_walkers, want_plot_saved):
         "yes",
         "yup",
         "ye",
-        "Y",
-        "YES",
-        "YUP",
-        "YE",
-        "True",
         "true",
         1,
     ]:
