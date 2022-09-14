@@ -132,8 +132,8 @@ def plot_walker_path(n_walkers, new_walker, random_start):
         label="{}, speed: {}".format(new_walker.walker_type(), new_walker.walker_speed),
     )
     plt.scatter(new_walker.x, new_walker.y, color=next_col, alpha=1, s=2)
-    if n_walkers <= 15:
-        plt.legend()
+    if n_walkers <= 12:
+        plt.legend(loc=1, fontsize="small", framealpha=0.4, markerscale=1.5)
     else:
         pass
     if random_start == "true":
@@ -199,18 +199,18 @@ def plot_all_walkers(steps, n_walkers, want_plot_saved, run_num):
         "true",
     ]:
         plt.savefig(
-            "../data/random_walkers_{}w_{}s_{}.png".format(n_walkers, steps, run_num)
+            "../data/random_walkers_{}w_{}s_{}.png".format(n_walkers, steps, run_num),
+            bbox_inches="tight",
         )
     else:
         pass
     # insert annotation with start and end point
     plt.annotate(
-        "Start point: +\nEnd point: x",
+        "Start points: +\nEnd points: x",
         xy=(0, 0),
         xytext=(5, 5),
-        xycoords="figure points",
+        xycoords="axes points",
     )
-    plt.tight_layout()
     plt.show()
 
 
