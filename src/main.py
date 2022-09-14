@@ -50,7 +50,9 @@ def main():
             utils.plot_walker_path(n_walkers, new_walker, random_start)
 
         # write information about walkers to dataframe
-        utils.write_to_dataframe(walkers, total_steps, n_walkers, want_csv_saved)
+        utils.write_to_dataframe(
+            walkers, total_steps, n_walkers, want_csv_saved, run_num
+        )
 
         stoptime = time.time()
 
