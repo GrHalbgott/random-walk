@@ -70,7 +70,7 @@ def main():
                 )
             )
 
-        utils.plot_all_walkers(total_steps, n_walkers, want_plot_saved)
+        utils.plot_all_walkers(total_steps, n_walkers, want_plot_saved, run_num)
 
 
 if __name__ == "__main__":

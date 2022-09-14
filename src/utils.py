@@ -164,7 +164,7 @@ def plot_walker_path(n_walkers, new_walker, random_start):
     )
 
 
-def plot_all_walkers(steps, n_walkers, want_plot_saved):
+def plot_all_walkers(steps, n_walkers, want_plot_saved, run_num):
     """Generate plot with precalculated paths and show them together in a plot"""
     if n_walkers == 1:
         plt.title(
@@ -197,11 +197,19 @@ def plot_all_walkers(steps, n_walkers, want_plot_saved):
         "yup",
         "ye",
         "true",
-        1,
     ]:
-        plt.savefig("../data/random_walkers_{}w_{}s.png".format(n_walkers, steps))
+        plt.savefig(
+            "../data/random_walkers_{}w_{}s_{}.png".format(n_walkers, steps, run_num)
+        )
     else:
         pass
+    # insert annotation with start and end point
+    plt.annotate(
+        "Start point: +\nEnd point: x",
+        xy=(0, 0),
+        xytext=(5, 5),
+        xycoords="figure points",
+    )
     plt.tight_layout()
     plt.show()
 
@@ -227,7 +235,6 @@ def write_to_dataframe(walkers, steps, n_walkers, want_csv_saved, run_num):
         "yup",
         "ye",
         "true",
-        1,
     ]:
         walkers_df = pd.DataFrame().from_dict(walkers, orient="index")
         walkers_df.to_csv(
