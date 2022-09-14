@@ -74,6 +74,7 @@ optional arguments:
   -m Movepattern  Boolean | Choose neighborhood movement pattern between Neumann (4 directions, false) or Moore (8 directions, true, default)
   -xy Startpoint  Boolean | Do you want different (random) start points for each walker (true, default) or let all plots start at 0,0 (false)?
   -p Save plot    Boolean | Do you want to automatically save the plot locally (./data/)? Use true/false. Default: false
+  -csv Save csv   Boolean | Do you want to automatically save the results as csv-file locally (./data/)? Use true/false. Default: false
   -r Runs         Integer | Total runs of the script (generate multiple plots if wished). Default value: 1
 ```
 

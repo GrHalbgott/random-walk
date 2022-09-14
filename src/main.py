@@ -29,6 +29,7 @@ def main():
         move_pattern,
         random_start,
         want_plot_saved,
+        want_csv_saved,
         total_runs,
     ) = utils._check_input_arguments()
 
@@ -49,7 +50,7 @@ def main():
             utils.plot_walker_path(n_walkers, new_walker, random_start)
 
         # write information about walkers to dataframe
-        utils.write_to_dataframe(walkers, total_steps, n_walkers)
+        utils.write_to_dataframe(walkers, total_steps, n_walkers, want_csv_saved)
 
         stoptime = time.time()
 

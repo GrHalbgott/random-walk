@@ -49,6 +49,13 @@ def _check_input_arguments():
         default="false",
     )
     parser.add_argument(
+        "-csv",
+        metavar="Save csv",
+        dest="want_csv_saved",
+        help="Boolean | Do you want to automatically save the results as csv-file locally (./data/)? Use true/false. Default: false",
+        default="false",
+    )
+    parser.add_argument(
         "-r",
         metavar="Runs",
         dest="total_runs",
@@ -75,6 +82,7 @@ def _check_input_arguments():
     movepattern = args.movepattern.lower()
     random_start = args.random_start.lower()
     want_plot_saved = args.want_plot_saved.lower()
+    want_csv_saved = args.want_csv_saved.lower()
     total_runs = int(args.total_runs)
     if total_steps == 0:
         total_steps = 1000
@@ -106,6 +114,7 @@ def _check_input_arguments():
         movepattern,
         random_start,
         want_plot_saved,
+        want_csv_saved,
         total_runs,
     )
 
@@ -197,7 +206,30 @@ def plot_all_walkers(steps, n_walkers, want_plot_saved):
     plt.show()
 
 
-def write_to_dataframe(walkers, steps, n_walkers):
+def write_to_dataframe(walkers, steps, n_walkers, want_csv_saved):
     """Save in dataframe and write to csv file"""
-    walkers_df = pd.DataFrame().from_dict(walkers, orient="index")
-    walkers_df.to_csv("../data/walkers_{}w_{}s.csv".format(n_walkers, steps))
+    # checks if the user wants to locally save the results as csv-file as well
+    while want_csv_saved not in ["true", "false"]:
+        want_csv_saved = input(
+            "Do you want to save the results as csv-file? Use y/n: "
+        ).lower()
+        if want_csv_saved in [
+            "y",
+            "yes",
+            "yup",
+            "ye",
+        ] or want_csv_saved in ["n", "no", "nope"]:
+            break
+        print("Please provide a valid input.")
+    if want_csv_saved in [
+        "y",
+        "yes",
+        "yup",
+        "ye",
+        "true",
+        1,
+    ]:
+        walkers_df = pd.DataFrame().from_dict(walkers, orient="index")
+        walkers_df.to_csv("../data/walkers_{}w_{}s.csv".format(n_walkers, steps))
+    else:
+        pass
