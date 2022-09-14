@@ -133,7 +133,7 @@ def plot_walker_path(n_walkers, new_walker, random_start):
     )
     plt.scatter(new_walker.x, new_walker.y, color=next_col, alpha=1, s=2)
     if n_walkers <= 12:
-        plt.legend(loc=1, fontsize="small", framealpha=0.4, markerscale=1.5)
+        plt.legend(fontsize="small", framealpha=0.4, markerscale=1.5)
     else:
         pass
     if random_start == "true":
@@ -178,6 +178,13 @@ def plot_all_walkers(steps, n_walkers, want_plot_saved, run_num):
                 n_walkers, steps
             )
         )
+    # insert annotation with start and end point
+    plt.annotate(
+        "Start points: +\nEnd points: x",
+        xy=(0, 0),
+        xytext=(5, 5),
+        xycoords="figure points",
+    )
     # checks if the user wants to locally save the figure as well
     while want_plot_saved not in ["true", "false"]:
         want_plot_saved = input(
@@ -204,13 +211,6 @@ def plot_all_walkers(steps, n_walkers, want_plot_saved, run_num):
         )
     else:
         pass
-    # insert annotation with start and end point
-    plt.annotate(
-        "Start points: +\nEnd points: x",
-        xy=(0, 0),
-        xytext=(5, 5),
-        xycoords="axes points",
-    )
     plt.show()
 
 
