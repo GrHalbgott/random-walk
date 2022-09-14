@@ -63,19 +63,19 @@ optional arguments:
 Due to the high randomization of the simulation the following possible results are shown only exemplarily.
 
 ### Example 1
-Options: 25 walkers, 25000 steps, default values except saving the plot
+Options: 25 walkers, 25000 steps, default values and saving the plot
 
 ```
 $ python src/main.py -s 25000 -w 25 -p true
 ```
-![25walkers](./data/random_walkers_25w_25000s.png)
+![25walkers](./data/random_walkers_25w_25000s_1.png)
 
 ### Example 2
-Options: 15 walkers, 10000 steps, start point at 0,0, movement pattern Neumann and not saving the plot (was saved later on)
+Options: 10000 steps, 12 walkers, start point at 0,0, movement pattern Neumann and saving the plot
 ```
-$ python src/main.py -s 10000 -w 15 -xy false -m false
+$ python src/main.py -s 10000 -w 12 -xy false -m false -p true
 ```
-![15walkers](./data/random_walkers_15w_10000s.png)
+![15walkers](./data/random_walkers_12w_10000s_1.png)
 
 ### Example 3
 With default values only
@@ -85,4 +85,4 @@ $ python src/main.py
 You can run the program with the default values.
 Want to run it now? Use y/n: y
 ```
-![1walker](./data/random_walkers_1w_1000s.png)
+![1walker](./data/random_walkers_1w_1000s_1.png)
