@@ -1,6 +1,6 @@
 # Random Walk Simulation
 
-In this project a simulation of randomized walks is generated.
+In this project plots with simulations of randomized walks are generated.
 
 ## Description
 
