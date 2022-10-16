@@ -48,6 +48,24 @@ usage: main.py [-h] [-s Steps] [-w Walkers] [-m Movepattern] [-xy Startpoint] [-
 Simulate a random walk with n walkers for n steps. You can use the following options to change the simulation to your needs. Have fun!
 
 optional arguments:
+<<<<<<< HEAD
+  -h, --help            show this help message and exit
+
+  -s Steps, integer     Integer | Number of total steps every walker shall take.
+                        Default value: 1000
+  -w Walkers, integer   Integer | Number of total walkers to be created.
+                        Default value: 1
+  -m Movepattern, bool  Boolean | Choose neighborhood movement pattern between
+                        Neumann (4 directions, false) or
+                        Moore (8 directions, true, default)
+  -xy Startpoint, bool  Boolean | Do you want different (random) start points for
+                        each walker (true, default) or
+                        let all plots start at 0,0 (false)?
+  -p Save plot, bool    Boolean | Do you want to automatically save the plot locally
+                        (in ./data/)? Use true/false. Default: false
+  -r Runs, integer      Integer | Total runs of the script (generate multiple plots if
+                        wished). Default value: 1
+=======
   -h, --help      show this help message and exit
   -s Steps        Integer | Number of total steps every walker shall take. Default value: 1000
   -w Walkers      Integer | Number of total walkers to be created. Default value: 1
@@ -56,6 +74,7 @@ optional arguments:
   -p Save plot    Boolean | Do you want to automatically save the plot locally (./data/)? Use true/false. Default: false
   -csv Save csv   Boolean | Do you want to automatically save the results as csv-file locally (./data/)? Use true/false. Default: false
   -r Runs         Integer | Total runs of the script (generate multiple plots if wished). Default value: 1
+>>>>>>> 69b4521fbe8972619f3f511f600468fdc26eb50a
 ```
 
 ## Results
