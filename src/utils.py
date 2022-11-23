@@ -92,7 +92,7 @@ def _check_input_arguments():
     elif total_runs > 10:
         total_runs = 10
         print(
-            "Changed quantity of runs/plots to 10. Trust me, you don't want to generate more that that."
+            "Changed quantity of runs/plots to 10. Trust me, you don't want to generate more than that."
         )
     if n_walkers < 1:
         n_walkers = 1

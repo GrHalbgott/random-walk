@@ -1,0 +1,6 @@
+# Call with:
+# $ pip install -r ./requirements.txt
+
+matplotlib
+numpy
+pandas
