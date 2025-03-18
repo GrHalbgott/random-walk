@@ -40,32 +40,14 @@ The program is structured as explained below:
 ### Calling
 Call the program without any arguments to access the help within the terminal with information on how to use the optional arguments:
 
-```
-$ python src/main.py
+```shell
+python src/main.py
 
 usage: main.py [-h] [-s Steps] [-w Walkers] [-m Movepattern] [-xy Startpoint] [-p Save plot] [-r Runs]
 
 Simulate a random walk with n walkers for n steps. You can use the following options to change the simulation to your needs. Have fun!
 
 optional arguments:
-<<<<<<< HEAD
-  -h, --help            show this help message and exit
-
-  -s Steps, integer     Integer | Number of total steps every walker shall take.
-                        Default value: 1000
-  -w Walkers, integer   Integer | Number of total walkers to be created.
-                        Default value: 1
-  -m Movepattern, bool  Boolean | Choose neighborhood movement pattern between
-                        Neumann (4 directions, false) or
-                        Moore (8 directions, true, default)
-  -xy Startpoint, bool  Boolean | Do you want different (random) start points for
-                        each walker (true, default) or
-                        let all plots start at 0,0 (false)?
-  -p Save plot, bool    Boolean | Do you want to automatically save the plot locally
-                        (in ./data/)? Use true/false. Default: false
-  -r Runs, integer      Integer | Total runs of the script (generate multiple plots if
-                        wished). Default value: 1
-=======
   -h, --help      show this help message and exit
   -s Steps        Integer | Number of total steps every walker shall take. Default value: 1000
   -w Walkers      Integer | Number of total walkers to be created. Default value: 1
@@ -74,34 +56,41 @@ optional arguments:
   -p Save plot    Boolean | Do you want to automatically save the plot locally (./data/)? Use true/false. Default: false
   -csv Save csv   Boolean | Do you want to automatically save the results as csv-file locally (./data/)? Use true/false. Default: false
   -r Runs         Integer | Total runs of the script (generate multiple plots if wished). Default value: 1
->>>>>>> 69b4521fbe8972619f3f511f600468fdc26eb50a
 ```
 
 ## Results
 
-Due to the high randomization of the simulation the following possible results are shown only exemplarily.
+Due to the high randomization of the simulation, the following possible results are shown only exemplarily.
 
 ### Example 1
+
 Options: 25 walkers, 25000 steps, default values and saving the plot
 
+```shell
+python src/main.py -s 25000 -w 25 -p true
 ```
-$ python src/main.py -s 25000 -w 25 -p true
-```
+
 ![25walkers](./data/random_walkers_25w_25000s_1.png)
 
 ### Example 2
+
 Options: 10000 steps, 12 walkers, start point at 0,0, movement pattern Neumann and saving the plot
+
+```shell
+python src/main.py -s 10000 -w 12 -xy false -m false -p true
 ```
-$ python src/main.py -s 10000 -w 12 -xy false -m false -p true
-```
+
 ![15walkers](./data/random_walkers_12w_10000s_1.png)
 
 ### Example 3
-With default values only
-```
-$ python src/main.py
+
+With default values only:
+
+```shell
+python src/main.py
 ...
 You can run the program with the default values.
 Want to run it now? Use y/n: y
 ```
+
 ![1walker](./data/random_walkers_1w_1000s_1.png)
